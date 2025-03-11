@@ -15,6 +15,11 @@ A **Flask** web application that helps users find and share great cafés with **
 
 
 ## 📸 Screenshots  
+![App Screenshot](https://github.com/notjustsomesmalltowngirl/coffee-and-wifi-finder/blob/main/Screenshot%202025-03-11%20093319.png?raw=true)  
+![App Screenshot](https://github.com/notjustsomesmalltowngirl/coffee-and-wifi-finder/blob/main/Screenshot%202025-03-11%20093333.png?raw=true)  
+![App Screenshot](https://github.com/notjustsomesmalltowngirl/coffee-and-wifi-finder/blob/main/Screenshot%202025-03-11%20093349.png?raw=true)  
+
+
 
 ## 🤝 Contributing  
 Feel free to fork this repo, submit pull requests, or suggest improvements!  
