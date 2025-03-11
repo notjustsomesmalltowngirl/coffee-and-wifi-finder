@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Add A New Cafe{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8">
+
+      <h1>Add a new café into the database</h1>
+      <form action="{{ url_for('add_cafe') }}" method="post" novalidate>
+          {{ form.csrf_token }}
+         <div class="mb-3">
+          {{ form.cafe.label(class="form-label") }} {{ form.cafe(class="form-control") }}
+             {% if form.cafe.errors %}
+                    {% for error in form.cafe.errors %}
+                    <p><span style="color: red">{{error}}</span></p>
+               {% endfor %}
+              {% endif %}
+         </div>
+            <div class="mb-3">
+          {{ form.location.label(class="form-label") }} {{ form.location(class="form-control") }}
+                 {% if form.location.errors %}
+                    {% for error in form.location.errors %}
+                    <p><span style="color: red">{{error}}</span></p>
+                  {% endfor %}
+              {% endif %}
+         </div>
+          <div class="mb-3">
+          {{ form.opening_time.label(class="form-label") }} {{ form.opening_time(class="form-control") }}
+               {% if form.cafe.errors %}
+                    {% for error in form.cafe.errors %}
+                    <p><span style="color: red">{{error}}</span></p>
+                {% endfor %}
+              {% endif %}
+         </div>
+          <div class="mb-3">
+          {{ form.closing_time.label(class="form-label") }} {{ form.closing_time(class="form-control") }}
+               {% if form.closing_time.errors %}
+                    {% for error in form.closing_time.errors %}
+                    <p><span style="color: red">{{error}}</span></p>
+                {% endfor %}
+              {% endif %}
+         </div>
+          <div class="mb-3">
+          {{ form.coffee_rating.label(class="form-label") }} {{ form.coffee_rating(class="form-select") }}
+               {% if form.coffee_rating.errors %}
+                    {% for error in form.coffee_rating.errors %}
+                    <p><span style="color: red">{{error}}</span></p>
+                {% endfor %}
+              {% endif %}
+         </div>
+          <div class="mb-3">
+          {{ form.wifi_strength.label(class="form-label") }} {{ form.wifi_strength(class="form-select") }}
+               {% if form.wifi_strength.errors %}
+                    {% for error in form.wifi_strength.errors %}
+                    <p><span style="color: red">{{error}}</span></p>
+                {% endfor %}
+              {% endif %}
+         </div>
+          <div class="mb-3">
+          {{ form.power.label(class="form-label") }} {{ form.power(class="form-select") }}
+               {% if form.power.errors %}
+                    {% for error in form.power.errors %}
+                    <p><span style="color: red">{{error}}</span></p>
+              {% endfor %}
+              {% endif %}
+         </div>
+          <button type="submit" class="btn btn-primary"> {{ form.submit.label }}</button>
+      </form>
+
+	  <p class="space-above"><a class="btn btn-warning btn-sm" href="{{url_for('cafes')}}">See all cafés</a></p>
+            <p><a  href="{{url_for('home')}}" role="button">Return to home page</a></p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
